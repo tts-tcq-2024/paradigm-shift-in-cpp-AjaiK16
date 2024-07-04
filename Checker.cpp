@@ -49,8 +49,6 @@ int main() {
     assert(batteryIsOk(25, 70, 0.9) == false);
     assert(batteryIsOk(-10, 70, 0.7) == false);
     assert(batteryIsOk(25, 10, 0.7) == false); 
-
-    cout << "All tests passed!\n";
     return 0;
 }
 
