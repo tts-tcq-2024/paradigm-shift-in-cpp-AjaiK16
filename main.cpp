@@ -1,5 +1,5 @@
 #include <cassert>
-#include "bms.h"
+#include "battmgsys.h"
 
 void testBatteryManagementSystem() {
     BatteryManagementSystem bms;
