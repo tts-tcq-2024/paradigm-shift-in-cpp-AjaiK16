@@ -25,7 +25,6 @@ int main() {
 
     BatteryManagementSystem bms(temperatureCheck, socCheck, chargeRateCheck);
 
-    // Here you can run any required checks, for example:
     std::cout << (bms.batteryIsOk(25, 70, 0.7) ? "Battery is OK" : "Battery is NOT OK") << std::endl;
 
     return 0;

@@ -7,20 +7,10 @@ class RangeChecker {
     float warningTolerance;
 
 public:
-    RangeChecker(float min, float max, float tolerance)
-        : min(min), max(max), warningTolerance(tolerance) {}
-
-    bool isInRange(float value) const {
-        return value >= min && value <= max;
-    }
-
-    bool isNearUpperLimit(float value) const {
-        return value >= max - warningTolerance;
-    }
-
-    bool isNearLowerLimit(float value) const {
-        return value <= min + warningTolerance;
-    }
+    RangeChecker(float min, float max, float tolerance);
+    bool isInRange(float value) const;
+    bool isNearUpperLimit(float value) const;
+    bool isNearLowerLimit(float value) const;
 };
 
 #endif // RANGE_CHECKER_H

@@ -1,4 +1,5 @@
 #include <cassert>
+#include <iostream>
 #include "BatteryManagementSystem.h"
 #include "MessageHandler.h"
 
@@ -25,7 +26,6 @@ void runTests() {
 
     BatteryManagementSystem bms(temperatureCheck, socCheck, chargeRateCheck);
 
-    // Test cases to cover all conditions
     assert(bms.batteryIsOk(25, 70, 0.7) == true);
     assert(bms.batteryIsOk(50, 70, 0.7) == false);
     assert(bms.batteryIsOk(25, 85, 0.7) == false);
