@@ -1,9 +1,9 @@
-#include <iostream>
+#include <cassert>
 #include "BatteryManagementSystem.h"
 #include "MessageHandler.h"
 
-int main() {
-    MessageHandler msgHandler("EN");
+void runTests() {
+    MessageHandler msgHandler("DE");
 
     RangeChecker temperatureRange(0, 45, 0.05 * 45);
     ParameterCheck temperatureCheck(temperatureRange,
@@ -25,8 +25,18 @@ int main() {
 
     BatteryManagementSystem bms(temperatureCheck, socCheck, chargeRateCheck);
 
-    // Here you can run any required checks, for example:
-    std::cout << (bms.batteryIsOk(25, 70, 0.7) ? "Battery is OK" : "Battery is NOT OK") << std::endl;
+    // Test cases to cover all conditions
+    assert(bms.batteryIsOk(25, 70, 0.7) == true);
+    assert(bms.batteryIsOk(50, 70, 0.7) == false);
+    assert(bms.batteryIsOk(25, 85, 0.7) == false);
+    assert(bms.batteryIsOk(25, 70, 0.9) == false);
+    assert(bms.batteryIsOk(-10, 70, 0.7) == false);
+    assert(bms.batteryIsOk(25, 10, 0.7) == false);
 
+    std::cout << "All tests passed!\n";
+}
+
+int main() {
+    runTests();
     return 0;
 }
