@@ -1,3 +1,4 @@
+
 #include "BatteryManagementSystem.h"
 
 BatteryManagementSystem::BatteryManagementSystem(const ParameterCheck& tempCheck,

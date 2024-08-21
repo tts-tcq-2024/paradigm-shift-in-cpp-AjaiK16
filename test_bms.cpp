@@ -1,9 +1,13 @@
+#ifndef UNIT_TESTS
+#define UNIT_TESTS
+
 #include <cassert>
 #include <iostream>
 #include "BatteryManagementSystem.h"
 #include "MessageHandler.h"
 
 void runTests() {
+    // Your test cases
     MessageHandler msgHandler("DE");
 
     RangeChecker temperatureRange(0, 45, 0.05 * 45);
@@ -36,7 +40,4 @@ void runTests() {
     std::cout << "All tests passed!\n";
 }
 
-int main() {
-    runTests();
-    return 0;
-}
+#endif

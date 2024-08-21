@@ -1,3 +1,4 @@
+
 #include "RangeChecker.h"
 
 RangeChecker::RangeChecker(float min, float max, float tolerance)

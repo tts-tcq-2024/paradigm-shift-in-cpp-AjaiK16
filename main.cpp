@@ -2,7 +2,12 @@
 #include "BatteryManagementSystem.h"
 #include "MessageHandler.h"
 
+// Declare the runTests function
+void runTests();
+
 int main() {
+    runTests();  // Call the test cases
+
     MessageHandler msgHandler("EN");
 
     RangeChecker temperatureRange(0, 45, 0.05 * 45);

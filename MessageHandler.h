@@ -1,3 +1,4 @@
+
 #ifndef MESSAGE_HANDLER_H
 #define MESSAGE_HANDLER_H
 
@@ -13,4 +14,4 @@ public:
     void setLanguage(const std::string& lang);
 };
 
-#endif // MESSAGE_HANDLER_H
+#endif 
