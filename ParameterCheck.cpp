@@ -8,13 +8,24 @@ ParameterCheck::ParameterCheck(const RangeChecker& checker,
     : rangeChecker(checker), outOfRangeMsgEN(outRangeEN), outOfRangeMsgDE(outRangeDE),
       warningMsgEN(warnEN), warningMsgDE(warnDE), messageHandler(handler) {}
 
-bool ParameterCheck::check(float value) const {
+bool ParameterCheck::isOutOfRange(float value) const {
     if (!rangeChecker.isInRange(value)) {
         messageHandler.printMessage(outOfRangeMsgEN, outOfRangeMsgDE);
-        return false;
+        return true;
     }
+    return false;
+}
+
+void ParameterCheck::checkForWarnings(float value) const {
     if (rangeChecker.isNearUpperLimit(value) || rangeChecker.isNearLowerLimit(value)) {
         messageHandler.printMessage(warningMsgEN, warningMsgDE);
     }
+}
+
+bool ParameterCheck::check(float value) const {
+    if (isOutOfRange(value)) {
+        return false;
+    }
+    checkForWarnings(value);
     return true;
 }
