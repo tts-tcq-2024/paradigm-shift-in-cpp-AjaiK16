@@ -1,4 +1,3 @@
-
 #ifndef PARAMETER_CHECK_H
 #define PARAMETER_CHECK_H
 
@@ -20,6 +19,10 @@ public:
                    MessageHandler& handler);
 
     bool check(float value) const;
+
+private:
+    bool isOutOfRange(float value) const;
+    void checkForWarnings(float value) const;
 };
 
 #endif // PARAMETER_CHECK_H
